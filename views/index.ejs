@@ -1,0 +1,52 @@
+<% include ./partials/header.ejs %>
+
+<div
+  class="w-full h-screen bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1604076913837-52ab5629fba9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFic3RyYWN0fGVufDB8fDB8fHww')] flex items-center justify-center"
+>
+<!-- h-[80vh] -->
+  <div class="w-[28vw] h-fit  bg-white px-14 py-8 rounded-[30px]">
+    <h1
+      class="text-3xl text-center font-semibold tracking-tighter capitalize leading-none mb-5"
+    >
+      Welcome to Pinterest
+    </h1>
+    <% if(error.length){%>
+      <p class="error text-red-700 text-center"><%= error %></p>
+
+    <%} %>
+    <form action="/login" method="post">
+      <input
+        class="border-2 rounded-lg w-full px-3 py-2 mt-2"
+        type="text"
+        name="username"
+        placeholder="Username"
+      />
+      <input
+        class="border-2 rounded-lg w-full px-3 py-2 mt-2"
+        type="password"
+        name="password"
+        id=""
+        placeholder="Password"
+      />
+      <input
+        class="border-2 rounded-full w-full px-3 py-2 bg-red-600 text-white rounded-full mt-6"
+        type="submit"
+        value="Login"
+      />
+      <a href="#" class="inline-block mt-2 font-semibold text-zinc-500 text-center w-full"
+        >Forgot Password ?</a
+      >
+
+      <p
+        class="text-xs text-zinc-300 font-semibold mt-6 w-3/4 mx-auto text-center"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        saepe explicabo exercitationem placeat aperiam.
+      </p>
+    </form>
+
+    <a class="inline-block mt-2 text-sm font-semibold text-zinc-500 text-center w-full" href="/register">Don't Have an Account ?</a>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>
